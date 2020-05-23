@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def demo():
-    return render_template('./html/game.html.j2', title='Hello world', content='content')
+    return render_template('game.html.j2', title='Hello world', content='content')
 
 
 if __name__ == '__main__':
