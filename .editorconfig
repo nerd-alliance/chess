@@ -1,0 +1,14 @@
+# Docs: https://editorconfig.org/
+
+root = true
+
+[*]
+# Force eol
+end_of_line = lf
+# Force trailing \n
+insert_final_newline = true
+
+# 4 space indentation for python
+[*.py]
+indent_style = space
+indent_size = 4
