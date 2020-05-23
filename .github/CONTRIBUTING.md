@@ -14,7 +14,7 @@ sudo apt install python3.8
 
 ## Python Virtual env
 
-It is *STRONGLY* (looking at you Squidy) recommended you use a python virtual env to install python
+It is *STRONGLY* (looking at you Squiddy) recommended you use a python virtual env to install python
 modules for this repo.
 
 Install Python3.8 virtual env using in-built venv tool (python 3.8 must be
