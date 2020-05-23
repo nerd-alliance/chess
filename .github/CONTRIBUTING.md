@@ -42,6 +42,17 @@ e.g `/mnt/c/Users/domin.D35K70P/Documents/git/chess/.chess_venv/bin/python`
 which python ; which pip
 ```
 
+#### Install packages from file
+```bash
+pip install -r requirements.txt
+```
+
+#### Add packages to file
+First install them to the venv using pip, then run (with the venv activated):
+```bash
+pip freeze > requirements.txt
+```
+
 #### Deactivation
 ```bash
 deactivate
