@@ -5,16 +5,16 @@
     <title>{{ title }}</title>
   </head>
   <body>
-    <!-- TODO this -->
-    <!-- <table>
-      {% for row in rows %}
+    <table>
+      {% for row in board.rows %}
         <tr>
-          {% for square in row %}
-            <td class="board_locale">{{square.contents}}</td>
+          {% for col in board.cols %}
+            {% set tile = board.get_tile_piece(row+col) %}
+            <td style="background-color: red">{{ tile.get_piece }}</td>
+            <!--TODO add superscript of square coords ("a1", "d6" ect)-->
           {% endfor %}
         </tr>
       {% endfor %}
-    </table> -->
-    <span>{{ content }}</span>
+    </table>
   </body>
 </html>
