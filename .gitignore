@@ -1,2 +1,5 @@
 #venv
 .chess_venv
+
+#python
+*.pyc
