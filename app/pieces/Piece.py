@@ -33,7 +33,7 @@ class Piece:
     def get_coord(self):
         return self.coord
 
-    def move(self, coord, dry_run=False):
+    def move(self, coord, dry_run=False) -> boolean:
         if coord in self.get_valid_moves():
             if not dry_run:
                 self.coord = coord
@@ -41,7 +41,7 @@ class Piece:
         else:
             return False
 
-    def get_valid_moves(self):
+    def get_valid_moves(self) -> list:
         """
         Exists so that move() does not syntax fail.
         However should be overwritten by extending piece,
