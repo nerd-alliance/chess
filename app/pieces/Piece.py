@@ -14,6 +14,13 @@ class Piece:
         else:
             self.faction = faction.lower()
 
+        if self.faction == "noir":
+            # Forward is decremental
+            self.forward = -1
+        elif self.faction == "blanc":
+            # Forward is incremental
+            self.forward = 1
+
         if not isinstance(coord, dict):
             raise TypeError(
                 "'coord' argument must be of type dict.\n"
@@ -41,7 +48,7 @@ class Piece:
         else:
             return False
 
-    def get_valid_moves(self) -> list:
+    def get_valid_moves(self, board) -> list:
         """
         Exists so that move() does not syntax fail.
         However should be overwritten by extending piece,
