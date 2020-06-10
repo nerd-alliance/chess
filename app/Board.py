@@ -1,16 +1,20 @@
 from Coord import Coord
 
 class Board:
+    cols = ('a','b','c','d','e','f','g','h')
+    rows = ('8','7','6','5','4','3','2','1')
+
     def __init__(self):
         self.board = {}
-        cols = ('a','b','c','d','e','f','g','h')
-        rows = ('1','2','3','4','5','6','7','8')
 
-        for row in rows:
-            for col in cols:
+        for row in self.rows:
+            for col in self.cols:
                 b_coord = col + row
-                self.board[b_coord] = None
+                self.board[b_coord] = f"{col}, {row}"
 
     def get_piece(self, coord):
-        b_coord = coord.column + coord.row
+        return get_piece(coord.column, coord.row)
+
+    def get_piece(self, col, row):
+        b_coord = col + row
         return self.board[b_coord]
