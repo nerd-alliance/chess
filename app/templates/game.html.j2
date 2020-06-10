@@ -9,7 +9,7 @@
       {% for row in board.rows %}
         <tr>
           {% for col in board.cols %}
-            {% set tile = board.get_piece(col, row) %}
+            {% set tile = board.get_piece_symbol(col, row) %}
             <td style="background-color: red">{{ tile }}</td>
             <!--TODO add superscript of square coords ("a1", "d6" ect)-->
           {% endfor %}

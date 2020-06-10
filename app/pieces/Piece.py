@@ -1,7 +1,7 @@
 class Piece:
     def __init__(self, faction, coord):
         valid_factions = ("blanc", "noir")
-        if faction.lower() not in Piece.valid_factions:
+        if faction.lower() not in valid_factions:
             raise ValueError(
                 f"{faction} is not a valid faction.\n"
                 f"Valid factions are {Piece.valid_factions}."
@@ -21,18 +21,18 @@ class Piece:
             # Forward is incremental
             self.forward = 1
 
-        if not isinstance(coord, dict):
-            raise TypeError(
-                "'coord' argument must be of type dict.\n"
-                f"Type {type(coord)} detected."
-            )
-        elif not len(coord) == 2:
-            raise ValueError(
-                "Given coord is not a valid coord.\n"
-                "Coords are a dict -> {'alpha': [a-h], 'numeric': [1-8]}"
-            )
-        else:
-            self.coord = coord
+        # if not isinstance(coord, dict):
+        #     raise TypeError(
+        #         "'coord' argument must be of type dict.\n"
+        #         f"Type {type(coord)} detected."
+        #     )
+        # elif not len(coord) == 2:
+        #     raise ValueError(
+        #         "Given coord is not a valid coord.\n"
+        #         "Coords are a dict -> {'alpha': [a-h], 'numeric': [1-8]}"
+        #     )
+        # else:
+        #     self.coord = coord
 
     def get_faction(self):
         return self.faction
@@ -40,7 +40,7 @@ class Piece:
     def get_coord(self):
         return self.coord
 
-    def move(self, coord, dry_run=False) -> boolean:
+    def move(self, coord, dry_run=False):
         if coord in self.get_valid_moves():
             if not dry_run:
                 self.coord = coord
@@ -48,7 +48,7 @@ class Piece:
         else:
             return False
 
-    def get_valid_moves(self, board) -> list:
+    def get_valid_moves(self, board):
         """
         Exists so that move() does not syntax fail.
         However should be overwritten by extending piece,
