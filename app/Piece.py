@@ -1,3 +1,4 @@
+from Coord import Coord
 class Piece:
     def __init__(self, faction, coord):
         valid_factions = ("blanc", "noir")
@@ -21,18 +22,13 @@ class Piece:
             # Forward is incremental
             self.forward = 1
 
-        # if not isinstance(coord, dict):
-        #     raise TypeError(
-        #         "'coord' argument must be of type dict.\n"
-        #         f"Type {type(coord)} detected."
-        #     )
-        # elif not len(coord) == 2:
-        #     raise ValueError(
-        #         "Given coord is not a valid coord.\n"
-        #         "Coords are a dict -> {'alpha': [a-h], 'numeric': [1-8]}"
-        #     )
-        # else:
-        #     self.coord = coord
+        if not isinstance(coord, Coord):
+            raise TypeError(
+                "'coord' argument must be of type Coord.\n"
+                f"Type {type(coord)} detected."
+            )
+        else:
+            self.coord = coord
 
     def get_faction(self):
         return self.faction
