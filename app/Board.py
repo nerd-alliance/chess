@@ -1,6 +1,11 @@
 from Coord import Coord
 from Tile import Tile
-from pieces import *
+from Pawn import Pawn
+from Bishop import Bishop
+from Castle import Castle
+from Knight import Knight
+from Queen import Queen
+from King import King
 
 class Board:
     cols = ('a','b','c','d','e','f','g','h')
